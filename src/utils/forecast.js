@@ -11,8 +11,9 @@ const forecast = (latitude, longitude, callback) => {
             let location = body.location.name + ', ' + body.location.region
             let conditions =  body.current.weather_descriptions[0];
             let temperature = body.current.temperature;
-            let feelslike = body.current.feelslike;
-            let forecastData = body.current.weather_descriptions[0] + ' and ' + body.current.temperature + ' degrees out.  It feels like ' + body.current.feelslike + ' degrees out.'
+            let forecastData = body.current.weather_descriptions[0] + ' and ' + 
+            body.current.temperature + ' degrees out.  It feels like ' + 
+            body.current.feelslike + ' degrees out.  The humidity is ' + body.current.humidity + '%.';
             callback(undefined, { location, conditions, temperature, forecastData });
         }
     });
